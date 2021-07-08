@@ -1,12 +1,12 @@
-// package main
+package main
 
-// import (
-//     "log"
-// )
+import (
+	"log"
+)
 
-// func main() {
-//     log.Print("Hey, I'm a log!")
-// }
+func main() {
+	log.Print("Hey, I'm a log!")
+}
 
 // Desta forma, ao executar o log.fatal, sai da aplicação
 // com se fosse o comando os.Exit(1)
@@ -78,21 +78,21 @@
 // 	log.Print("Hey! I'm a log message!")
 // }
 
-package main
+// package main
 
-import (
-	"github.com/rs/zerolog"
-	"github.com/rs/zerolog/log"
-)
+// import (
+// 	"github.com/rs/zerolog"
+// 	"github.com/rs/zerolog/log"
+// )
 
-func main() {
-	zerolog.TimeFieldFormat = zerolog.TimeFormatUnix
+// func main() {
+// 	zerolog.TimeFieldFormat = zerolog.TimeFormatUnix
 
-	log.Debug().
-		Int("EmployeeID", 1001).
-		Msg("Getting employee information")
+// 	log.Debug().
+// 		Int("EmployeeID", 1001).
+// 		Msg("Getting employee information")
 
-	log.Debug().
-		Str("Name", "John").
-		Send()
-}
+// 	log.Debug().
+// 		Str("Name", "John").
+// 		Send()
+// }
