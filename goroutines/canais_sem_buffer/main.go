@@ -1,14 +1,3 @@
-/*
-
-ch := make(chan int) // declara um canal do tipo inteiro
-ch := make(chan string, 10) // Limita o tamanho da fila ao criar o buffer
-ch <- x // envia (ou escreve) x através do canal ch
-x = <-ch // x recebe (ou lê) dados enviados para o canal ch
-<-ch // recebe dados, mas o resultado é descartado
-close(ch) // fecha o canal
-
-*/
-
 package main
 
 import (
@@ -40,12 +29,14 @@ func main() {
 	}
 
 	ch := make(chan string)
+	
 	for _, api := range apis {
 		go checkAPI(api, ch)
 	}
-	fmt.Printf(<-ch)
+	for i := 0; i < len(apis); i++{
+		fmt.Printf(<-ch)
+	}
 
 	elapsed := time.Since(start)
 	fmt.Printf("Done! It took %v seconds!\n", elapsed.Seconds())
-
 }
